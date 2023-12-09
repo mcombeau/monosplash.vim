@@ -37,8 +37,8 @@ let g:monosplash_color = 'magenta'
 let g:monosplash_color = 'cyan'
 
 " Allow/Disallow monosplash to set the splash color using a hash of the current working directory.
-let g:monosplash_auto_cwd_colour = 0 " the default, false
-let g:monosplash_auto_cwd_colour = 1
+let g:monosplash_auto_cwd_colour = 0
+let g:monosplash_auto_cwd_colour = 1 " the default
 
 " Allow/Disallow monosplash to set the background color (if disallowed, uses the terminal default)
 let g:monosplash_no_bg = 0 " the default
