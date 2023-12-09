@@ -40,11 +40,11 @@ let g:splash_colors['blue']    = {"gui": "#61afe7", "cterm": "74"}
 let g:splash_colors['magenta'] = {"gui": "#c688cd", "cterm": "176"}
 let g:splash_colors['cyan']    = {"gui": "#56b6c2", "cterm": "73"}
 
-let g:splash_auto_cwd_color = get(g:, 'monosplash_auto_cwd_color', 0)
+let g:splash_auto_cwd_color = get(g:, 'monosplash_auto_cwd_color', 1)
 
 let s:splash = get(g:, 'monosplash_color', 'yellow')
-let s:splash = get(g:, 'monosplash_color', s:splash)
 let s:no_bg = get(g:, 'monosplash_no_bg', 0)
+echom "Splash init" s:splash
 
 " 32 bit fowler-noll-vo hash
 function! s:fnv1a(str)
@@ -64,6 +64,7 @@ if get(g:, 'monosplash_auto_cwd_color', 0)
   let key_index = abs(hash) % len(g:splash_colors)
   let color = keys(g:splash_colors)[key_index]
   let s:splash = color
+  echom "Splash after autocwd" s:splash
 endif
 
 let s:background = &background
@@ -76,7 +77,6 @@ let s:norm				= s:lighter_gray
 let s:norm_subtle		= s:medium_gray
 let s:norm_splash		= get(splash_colors, s:splash)
 let s:cursorlinenr		= s:white
-
 
 " https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
