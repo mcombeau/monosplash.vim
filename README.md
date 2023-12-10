@@ -31,7 +31,8 @@ The options you can set in your `.vimrc` are:
 
 ```vim
 " Set your preferred splash color for all vim instances
-" (This option overrides the auto_cwd_color option, but can be overridden by directory-specific splash color option)
+" (This option overrides the auto_cwd_color option, but can be overridden by
+" directory-specific color option)
 let g:monosplash_color = 'yellow' " (default if auto_cwd_color is disabled)
 let g:monosplash_color = 'orange'
 let g:monosplash_color = 'red'
@@ -56,7 +57,7 @@ colorscheme monosplash
 You can also set a specific splash color for a specific directory:
 
 ```vim
-" This overrides global options auto_cwd_color, and global splash color option in a specific directory
+" This overrides global options auto_cwd_color and global splash color in a specific directory
 " (This needs to be added after the global splash color option if there is one)
 if getcwd() =~ 'dir/my-project'
   let g:monosplash_color = 'cyan'
@@ -77,8 +78,8 @@ let g:lightline = {'colorscheme': 'monosplash'}
 
 Monosplash is based on a combination of these beautiful themes:
 
-- [Komau](https://github.com/ntk148v/komau.vim) by ntk148v
 - [Accent](https://github.com/Alligator/accent.vim) by Alligator
+- [Komau](https://github.com/ntk148v/komau.vim) by ntk148v
 
 ## Contribute
 
