@@ -2,8 +2,9 @@
 
 A monochromatic vim theme with a splash of color.
 
-It can help you quickly tell apart different vim sessions at a glance.
-It supports the GUI and 256 colour terminals.
+The accent color is customizable and can be automatically picked depending on the current working directory. This can enable you tell different vim sessions apart at a glance.
+
+Monosplash supports GUI and 256 color terminals.
 
 ## Installation
 
@@ -28,7 +29,8 @@ The options you can set in your `.vimrc` are:
 
 ```vim
 " Set your preferred accent color for all vim instances
-let g:monosplash_color = 'yellow' " the default
+" (This option will be overridden if auto_cwd_color is enabled)
+let g:monosplash_color = 'yellow' " (default if auto_cwd_color is disabled)
 let g:monosplash_color = 'orange'
 let g:monosplash_color = 'red'
 let g:monosplash_color = 'green'
@@ -36,13 +38,13 @@ let g:monosplash_color = 'blue'
 let g:monosplash_color = 'magenta'
 let g:monosplash_color = 'cyan'
 
-" Allow/Disallow monosplash to set the splash color using a hash of the current working directory.
-let g:monosplash_auto_cwd_colour = 0
-let g:monosplash_auto_cwd_colour = 1 " the default
+" Enable/disable setting the splash color using a hash of the current working directory.
+let g:monosplash_auto_cwd_color = 0 " disable
+let g:monosplash_auto_cwd_color = 1 " enable (default)
 
-" Allow/Disallow monosplash to set the background color (if disallowed, uses the terminal default)
-let g:monosplash_no_bg = 0 " the default
-let g:monosplash_no_bg = 1
+" Enable/disable no background color mode (if enabled, uses the terminal's default background)
+let g:monosplash_no_bg = 0 " disable (default)
+let g:monosplash_no_bg = 1 " enable
 
 " Set the colorscheme after adjusting options
 colorscheme monosplash
