@@ -1,6 +1,6 @@
 # monosplash.vim
 
-A monochromatic vim theme with a splash of color.
+A dark monochromatic vim theme with a splash of color.
 <p align="center">
   <img src="https://github.com/mcombeau/monosplash.vim/blob/main/screenshots/monosplash.gif" alt="Monosplash vim colorscheme in action" />
 </p>
