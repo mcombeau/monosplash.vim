@@ -17,13 +17,13 @@ let g:colors_name='monosplash'
 
 let s:black			= {"gui": "#191a20", "cterm": "235"}
 let s:medium_gray	= {"gui": "#7b7c82", "cterm": "243"}
-let s:white			= {"gui": "#d3d3d5", "cterm": "255"}
+let s:white			= {"gui": "#bfc2cf", "cterm": "255"}
 let s:light_black	= {"gui": "#4f5158", "cterm": "238"}
 let s:lighter_black	= {"gui": "#65666d", "cterm": "240"}
 let s:subtle_black	= {"gui": "#393b43", "cterm": "236"}
 let s:light_gray	= {"gui": "#919297", "cterm": "246"}
 let s:lighter_gray	= {"gui": "#bdbec0", "cterm": "252"}
-let s:lightest_gray	= {"gui": "#e9e9ea", "cterm": "254"}
+let s:lightest_gray	= {"gui": "#d3d3d5", "cterm": "254"}
 let s:yellow		= {"gui": "#FED442", "cterm": "221"}
 let s:pink			= {"gui": "#D73A49", "cterm": "167"}
 let s:green			= {"gui": "#22863A", "cterm": "29" }
@@ -44,7 +44,6 @@ let g:splash_auto_cwd_color = get(g:, 'monosplash_auto_cwd_color', 1)
 
 let s:splash = get(g:, 'monosplash_color', 'yellow')
 let s:no_bg = get(g:, 'monosplash_no_bg', 0)
-echom "Splash init" s:splash
 
 " 32 bit fowler-noll-vo hash
 function! s:fnv1a(str)
