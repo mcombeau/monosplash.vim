@@ -41,8 +41,7 @@ let g:splash_colors['magenta'] = {"gui": "#c688cd", "cterm": "176"}
 let g:splash_colors['cyan']    = {"gui": "#56b6c2", "cterm": "73"}
 
 let g:splash_auto_cwd_color = get(g:, 'monosplash_auto_cwd_color', 1)
-
-let s:splash = get(g:, 'monosplash_color', 'yellow')
+let s:splash = get(g:, 'monosplash_color', 'undefined')
 let s:no_bg = get(g:, 'monosplash_no_bg', 0)
 
 " 32 bit fowler-noll-vo hash
@@ -58,11 +57,15 @@ function! s:fnv1a(str)
   return hash
 endfunction
 
-if get(g:, 'monosplash_auto_cwd_color', 1)
+if s:splash != 'undefined'
+	let s:splash = get(g:, 'monosplash_color')
+elseif g:splash_auto_cwd_color == 1
   let hash = s:fnv1a(getcwd())
   let key_index = abs(hash) % len(g:splash_colors)
   let color = keys(g:splash_colors)[key_index]
   let s:splash = color
+else
+	let s:splash = get(g:, 'monosplash_color', 'yellow')
 endif
 
 let s:background = &background

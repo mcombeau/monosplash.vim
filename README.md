@@ -25,11 +25,13 @@ Monosplash supports GUI and 256 color terminals.
 
 If no other options are set, the splash color will be chosen based on the hash of the current working directory.
 
+### Options
+
 The options you can set in your `.vimrc` are:
 
 ```vim
-" Set your preferred accent color for all vim instances
-" (This option will be overridden if auto_cwd_color is enabled)
+" Set your preferred splash color for all vim instances
+" (This option overrides the auto_cwd_color option, but can be overridden by directory-specific splash color option)
 let g:monosplash_color = 'yellow' " (default if auto_cwd_color is disabled)
 let g:monosplash_color = 'orange'
 let g:monosplash_color = 'red'
@@ -38,7 +40,8 @@ let g:monosplash_color = 'blue'
 let g:monosplash_color = 'magenta'
 let g:monosplash_color = 'cyan'
 
-" Enable/disable setting the splash color using a hash of the current working directory.
+" Enable/disable setting the splash color using a hash of the current working directory
+" {This option is overridden if a global splash color is set)
 let g:monosplash_auto_cwd_color = 0 " disable
 let g:monosplash_auto_cwd_color = 1 " enable (default)
 
@@ -50,18 +53,29 @@ let g:monosplash_no_bg = 1 " enable
 colorscheme monosplash
 ```
 
-<!-- a neat thing to do is change the accent colour based on the working directory when vim starts: -->
+You can also set a specific splash color for a specific directory:
 
-<!-- ```vim -->
-<!-- if getcwd() =~ 'code/my-cool-project' -->
-<!--   let g:accent_colour = 'cyan' -->
-<!--   colo accent -->
-<!-- endif -->
-<!-- ``` -->
+```vim
+" This overrides global options auto_cwd_color, and global splash color option in a specific directory
+" (This needs to be added after the global splash color option if there is one)
+if getcwd() =~ 'dir/my-project'
+  let g:monosplash_color = 'cyan'
+endif
+```
+
+### Lightline Theme
+
+To enable the included lightline theme (which uses the above settings as well):
+
+```vim
+set noshowmode
+let g:lightline = {'colorscheme': 'monosplash'}
+
+```
 
 ## Credits
 
-Based on a combination of these beautiful themes:
+Monosplash is based on a combination of these beautiful themes:
 
 - [Komau](https://github.com/ntk148v/komau.vim) by ntk148v
 - [Accent](https://github.com/Alligator/accent.vim) by Alligator
@@ -69,3 +83,7 @@ Based on a combination of these beautiful themes:
 ## Contribute
 
 Feel free to submit a pull request or open an issue for any bugfixes or improvements!
+
+---
+
+Made by mcombeau | LinkedIn: [mcombeau](https://www.linkedin.com/in/mia-combeau-86653420b/) | Website: [codequoi.com](https://www.codequoi.com)
