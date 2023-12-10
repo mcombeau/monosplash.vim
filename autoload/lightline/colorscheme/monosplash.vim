@@ -16,7 +16,7 @@ let g:splash_colors['blue']    = [ "#61afe7", 74 ]
 let g:splash_colors['magenta'] = [ "#c688cd", 176 ]
 let g:splash_colors['cyan']    = [ "#56b6c2", 73 ]
 
-let g:splash_auto_cwd_color = get(g:, 'monosplash_auto_cwd_color', 0)
+let g:splash_auto_cwd_color = get(g:, 'monosplash_auto_cwd_color', 1)
 
 let s:splash = get(g:, 'monosplash_color', 'yellow')
 let s:splash = get(g:, 'monosplash_color', s:splash)
@@ -35,7 +35,7 @@ function! s:fnv1a(str)
   return hash
 endfunction
 
-if get(g:, 'monosplash_auto_cwd_color', 0)
+if get(g:, 'monosplash_auto_cwd_color', 1)
   let hash = s:fnv1a(getcwd())
   let key_index = abs(hash) % len(g:splash_colors)
   let color = keys(g:splash_colors)[key_index]

@@ -58,24 +58,27 @@ function! s:fnv1a(str)
   return hash
 endfunction
 
-if get(g:, 'monosplash_auto_cwd_color', 0)
+if get(g:, 'monosplash_auto_cwd_color', 1)
   let hash = s:fnv1a(getcwd())
   let key_index = abs(hash) % len(g:splash_colors)
   let color = keys(g:splash_colors)[key_index]
   let s:splash = color
-  echom "Splash after autocwd" s:splash
 endif
 
 let s:background = &background
 
+if s:no_bg
+	let s:bg				= {'gui': 'none', 'cterm': 'none'}
+else
+	let s:bg				= s:black
+endif
 let s:fg				= s:white
-let s:bg				= s:black
 let s:bg_subtle			= s:lighter_black
 let s:bg_very_subtle	= s:subtle_black
 let s:norm				= s:lighter_gray
 let s:norm_subtle		= s:medium_gray
 let s:norm_splash		= get(splash_colors, s:splash)
-let s:cursorlinenr		= s:white
+let s:cursorlinenr		= s:norm_splash
 
 " https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
