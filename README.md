@@ -69,7 +69,6 @@ endif
 To enable the included [lightline](https://github.com/itchyny/lightline.vim) theme (which uses the above settings as well):
 
 ```vim
-set noshowmode
 let g:lightline = {'colorscheme': 'monosplash'}
 
 ```
