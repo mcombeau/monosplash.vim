@@ -55,9 +55,9 @@ let s:p = {
 
 let s:p.normal.left     = [[ s:monosplash, s:black ], [ s:white, s:medium_gray ]]
 let s:p.normal.right    = [[ s:white, s:medium_gray ], [ s:white, s:medium_gray ]]
-let s:p.insert.left     = [[ s:monosplash, s:black ], [ s:white, s:medium_gray ]]
-let s:p.visual.left     = [[ s:monosplash, s:black ], [ s:white, s:medium_gray ]]
-let s:p.replace.left     = [[ s:monosplash, s:black ], [ s:white, s:medium_gray ]]
+let s:p.insert.left     = [[ s:black, s:monosplash ], [ s:white, s:medium_gray ]]
+let s:p.visual.left     = [[ s:black, s:monosplash ], [ s:white, s:medium_gray ]]
+let s:p.replace.left    = [[ s:black, s:monosplash ], [ s:white, s:medium_gray ]]
 
 let s:p.inactive.right  = [[ s:lightest_gray, s:medium_gray ], [ s:medium_gray, s:medium_gray ]]
 let s:p.inactive.left   = [[ s:lightest_gray, s:medium_gray ], [ s:medium_gray, s:medium_gray ]]
@@ -70,6 +70,5 @@ let s:p.normal.warning  = [[ s:orange, s:medium_gray  ]]
 let s:p.tabline.left    = [[ s:lightest_gray, s:medium_gray ]]
 let s:p.tabline.tabsel  = [[ s:medium_gray, s:yellow    ]]
 let s:p.tabline.middle  = [[ s:yellow, s:medium_gray    ]]
-
 
 let g:lightline#colorscheme#monosplash#palette = lightline#colorscheme#flatten(s:p)

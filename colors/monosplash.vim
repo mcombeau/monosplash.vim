@@ -102,7 +102,7 @@ endif
 call s:h("Cursor",        {"bg": s:light_black, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
 
-call s:h("Constant",      {"fg": s:norm_subtle})
+call s:h("Constant",      {"fg": s:norm_splash})
 hi! link Character        Constant
 hi! link Number           Constant
 hi! link Boolean          Constant
@@ -127,14 +127,14 @@ hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h("Type",          {"fg": s:norm})
+call s:h("Type",          {"fg": s:norm_subtle})
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
 
-call s:h("Special",       {"fg": s:norm_subtle, "gui": "bold"})
+call s:h("Special",       {"fg": s:norm_splash})
 hi! link SpecialChar      Special
-hi! link Tag              Special
+hi! link Tag              Type
 hi! link Delimiter        Special
 hi! link SpecialComment   Special
 hi! link Debug            Special
@@ -143,7 +143,7 @@ call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline
 call s:h("Ignore",        {"fg": s:bg})
 call s:h("Error",         {"fg": s:white, "bg": s:red, "cterm": "bold"})
 call s:h("Todo",          {"fg": s:pink, "gui": "underline", "cterm": "underline"})
-call s:h("SpecialKey",    {"fg": s:green})
+call s:h("SpecialKey",    {"fg": s:norm_splash})
 call s:h("NonText",       {"fg": s:medium_gray})
 call s:h("Directory",     {"fg": s:norm, "gui": "bold", "cterm": "bold"})
 call s:h("ErrorMsg",      {"fg": s:red})
