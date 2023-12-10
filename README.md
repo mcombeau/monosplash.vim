@@ -1,10 +1,10 @@
 # monosplash.vim
 
 A dark monochromatic vim theme with a splash of color.
+
 <p align="center">
   <img src="https://github.com/mcombeau/monosplash.vim/blob/main/screenshots/monosplash.gif" alt="Monosplash vim colorscheme in action" />
 </p>
-
 
 The accent color is customizable and can be automatically picked depending on the current working directory. This can enable you tell different vim sessions apart at a glance.
 

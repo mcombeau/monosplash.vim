@@ -22,38 +22,38 @@ let s:no_bg = get(g:, 'monosplash_no_bg', 0)
 
 " 32 bit fowler-noll-vo hash
 function! s:fnv1a(str)
-  let hash = 2166136261
-  let i = 0
-  while i < len(a:str)
-    let c = char2nr(a:str[i])
-    let hash = xor(hash, c)
-    let hash = hash * 16777619
-    let i += 1
-  endwhile
-  return hash
+    let hash = 2166136261
+    let i = 0
+    while i < len(a:str)
+        let c = char2nr(a:str[i])
+        let hash = xor(hash, c)
+        let hash = hash * 16777619
+        let i += 1
+    endwhile
+    return hash
 endfunction
 
 if s:splash != 'undefined'
-	let s:splash = get(g:, 'monosplash_color')
+    let s:splash = get(g:, 'monosplash_color')
 elseif g:splash_auto_cwd_color == 1
-  let hash = s:fnv1a(getcwd())
-  let key_index = abs(hash) % len(g:splash_colors)
-  let color = keys(g:splash_colors)[key_index]
-  let s:splash = color
+    let hash = s:fnv1a(getcwd())
+    let key_index = abs(hash) % len(g:splash_colors)
+    let color = keys(g:splash_colors)[key_index]
+    let s:splash = color
 else
-	let s:splash = get(g:, 'monosplash_color', 'yellow')
+    let s:splash = get(g:, 'monosplash_color', 'yellow')
 endif
 
 let s:monosplash	= get(splash_colors, s:splash)
 
 let s:p = {
-    \ 'normal': {},
-    \ 'inactive': {},
-    \ 'insert': {},
-    \ 'replace': {},
-    \ 'visual': {},
-    \ 'tabline': {}
-    \ }
+            \ 'normal': {},
+            \ 'inactive': {},
+            \ 'insert': {},
+            \ 'replace': {},
+            \ 'visual': {},
+            \ 'tabline': {}
+            \ }
 
 let s:p.normal.left     = [[ s:monosplash, s:black ], [ s:white, s:medium_gray ]]
 let s:p.normal.right    = [[ s:white, s:medium_gray ], [ s:white, s:medium_gray ]]
