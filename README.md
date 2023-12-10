@@ -24,6 +24,8 @@ It supports the GUI and 256 colour terminals.
 
 If no other options are set, the splash color will be chosen based on the hash of the current working directory.
 
+The options you can set in your `.vimrc` are:
+
 ```vim
 " Set your preferred accent color for all vim instances
 let g:monosplash_color = 'yellow' " the default
@@ -35,8 +37,8 @@ let g:monosplash_color = 'magenta'
 let g:monosplash_color = 'cyan'
 
 " Allow/Disallow monosplash to set the splash color using a hash of the current working directory.
-let g:monosplash_auto_cwd_colour = 0 " the default, false
-let g:monosplash_auto_cwd_colour = 1
+let g:monosplash_auto_cwd_colour = 0
+let g:monosplash_auto_cwd_colour = 1 " the default
 
 " Allow/Disallow monosplash to set the background color (if disallowed, uses the terminal default)
 let g:monosplash_no_bg = 0 " the default
@@ -61,10 +63,6 @@ Based on a combination of these beautiful themes:
 
 - [Komau](https://github.com/ntk148v/komau.vim) by ntk148v
 - [Accent](https://github.com/Alligator/accent.vim) by Alligator
-
-## Contributions
-
-If you find any problems with this color scheme please post an issue here on GitHub.
 
 ## Contribute
 
